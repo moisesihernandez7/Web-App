@@ -1,0 +1,8 @@
+body{
+    background-image: url(Backgrond\ basketball.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* or contain, or specific values */
+}
+h1{
+    color: rgb(255, 255, 255);
+}
