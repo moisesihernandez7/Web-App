@@ -1,14 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./stylecss">
-    <script src="./script.js"></script>
+  <meta charset="UTF-8">
+  <title>City Runs - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .spinner {
+      display: inline-block;
+      animation: spin 2s linear infinite;
+      margin-right: 0.5rem;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
-<body>
-    <h1>Web App</h1>
-    <h2>Moises Hernandez</h2>
+<body class="court-bg">
+
+  <!-- Modern Navigation Bar with Spinner -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="spinner">🏀</span>
+      City Runs
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courts.html">Courts</a>
+      <a href="shoes.html">Shoes</a>
+      <a href="motivation.html">Motivation</a>
+
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <div class="overlay court-overlay">
+    <div class="center-circle"></div>
+    <div class="three-point-arc"></div>
+
+    <!-- Lucky 7s Warriors Edition -->
+    <div class="lucky-sevens">
+      <span>7</span>
+      <span>7</span>
+      <span>7</span>
+      <span>7</span>
+      <span>7</span>
+      <span>7</span>
+      <span>7</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="home-header">
+      <h1 class="hero-title">🏀 City Runs</h1>
+      <p class="hero-subtitle">Explore the best basketball courts & shoes in San Francisco</p>
+      <a href="courts.html" class="start-button">Find Courts</a>
+    </header>
+
+    <!-- SECTION NAVIGATION WITH ICONS -->
+    <div class="quick-nav">
+      <a href="courts.html">
+        <span>🏀</span>
+        <p>Courts</p>
+      </a>
+      <a href="shoes.html">
+        <span>👟</span>
+        <p>Shoes</p>
+      </a>
+      <a href="motivation.html">
+  <span>💬</span>
+  <p>Motivation</p>
+</a>
+
+      <a href="about.html">
+        <span>📖</span>
+        <p>About</p>
+      </a>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <div class="feature-box">
+        <h3>📍 Local Courts</h3>
+        <p>Instant access to courts with reviews, photos, and ratings.</p>
+      </div>
+      <div class="feature-box">
+        <h3>👟 Best Shoes</h3>
+        <p>Top picks for indoor and outdoor play, updated weekly.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🔥 Join the Run</h3>
+        <p>Be part of SF's pickup culture and find your crew.</p>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
+
+
+
+
+
+

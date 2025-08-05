@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City Runs - Motivation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .spinner {
+      display: inline-block;
+      animation: spin 2s linear infinite;
+      margin-right: 0.5rem;
+    }
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .quote-tab-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    .quote-heading {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #FFC72C;
+    }
+
+    .quote-tab-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 2px solid #FFC72C;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background-color: #FFC72C;
+      color: #1D4290;
+    }
+
+    .quote-tab {
+      display: none;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    .quote-tab.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="court-bg">
+
+  <!-- Modern Navigation Bar with Spinner -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="spinner">🏀</span>
+      City Runs
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courts.html">Courts</a>
+      <a href="shoes.html">Shoes</a>
+      <a href="motivation.html">Motivation</a>
+
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Court Overlay (background design) -->
+  <div class="overlay court-overlay">
+    <div class="center-circle"></div>
+    <div class="three-point-arc"></div>
+
+    <!-- QUOTE SECTION -->
+    <section class="quote-tab-section">
+      <h2 class="quote-heading">💬 Hooper Motivation</h2>
+
+      <div class="quote-tab-buttons">
+        <button class="tab-btn active" onclick="showQuote(0)">KD</button>
+        <button class="tab-btn" onclick="showQuote(1)">MJ</button>
+        <button class="tab-btn" onclick="showQuote(2)">LeBron</button>
+        <button class="tab-btn" onclick="showQuote(3)">Kobe</button>
+        <button class="tab-btn" onclick="showQuote(4)">Curry</button>
+      </div>
+
+      <div class="quote-tab-content">
+        <div class="quote-tab active">"Hard work beats talent when talent fails to work hard." – <strong>Kevin Durant</strong></div>
+        <div class="quote-tab">"I’ve failed over and over and over again in my life. And that is why I succeed." – <strong>Michael Jordan</strong></div>
+        <div class="quote-tab">"You have to be able to accept failure to get better." – <strong>LeBron James</strong></div>
+        <div class="quote-tab">"Rest at the end, not in the middle." – <strong>Kobe Bryant</strong></div>
+        <div class="quote-tab">"Be the best version of yourself in anything that you do. You don’t have to live anybody else’s story." – <strong>Stephen Curry</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function showQuote(index) {
+      const tabs = document.querySelectorAll('.quote-tab');
+      const buttons = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+      tabs[index].classList.add('active');
+      buttons[index].classList.add('active');
+    }
+  </script>
+  <div class="falling-stars">
+  <span>✦</span>
+  <span>✦</span>
+  <span>✦</span>
+  <span>✦</span>
+  <span>✦</span>
+  <span>✦</span>
+  <span>✦</span>
+</div>
+
+</body>
+</html>
