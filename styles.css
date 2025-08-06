@@ -277,7 +277,7 @@ header p {
 .court-card {
   display: flex;
   gap: 20px;
-  background: rgba(125, 118, 118, 0.5);
+  background: rgba(125, 118, 118, 0.5); /* ✅ FIXED */
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
@@ -287,9 +287,10 @@ header p {
 }
 
 .court-card:hover {
-  background: rgba(29, 66, 138, 0.3);
+  background: rgba(29, 66, 138, 0.3); /* ✅ FIXED */
   box-shadow: 0 0 10px rgba(255, 199, 44, 0.4);
 }
+
 
 .court-image img {
   width: 200px;
