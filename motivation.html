@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
   <style>
     .spinner {
       display: inline-block;
@@ -78,11 +80,17 @@
 </head>
 <body class="court-bg">
 
-  <!-- Modern Navigation Bar with Spinner -->
   <nav class="navbar">
     <div class="nav-logo">
       <span class="spinner">🏀</span>
       City Runs
+      <div class="nav-actions">
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon">🌙</span>
+    <span class="label">Dark</span>
+  </button>
+</div>
+
     </div>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -93,6 +101,7 @@
       <a href="about.html">About</a>
     </div>
   </nav>
+
 
   <!-- Court Overlay (background design) -->
   <div class="overlay court-overlay">

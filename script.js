@@ -110,4 +110,31 @@ function renderStars(rating) {
   const stars = typeof rating === 'number' ? '★'.repeat(rating) : '';
   return `<span style="color: orange;">${stars}</span>`;
 }
+// ===== Dark Mode: black + blue accents (simple & global) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+
+  // Apply saved theme
+  const saved = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+  updateButton(saved);
+
+  function updateButton(theme){
+    if (!btn) return;
+    const icon = btn.querySelector('.icon');
+    const label = btn.querySelector('.label');
+    if (theme === 'dark') { if (icon) icon.textContent = '☀️'; if (label) label.textContent = 'Light'; }
+    else { if (icon) icon.textContent = '🌙'; if (label) label.textContent = 'Dark'; }
+  }
+
+  // Toggle
+  btn?.addEventListener('click', () => {
+    const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateButton(next);
+  });
+});
+
 

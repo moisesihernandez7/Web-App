@@ -741,4 +741,163 @@ header p {
     0 0 32px #006BB6;
   transition: box-shadow 0.4s ease-in-out;
 }
+/* =========================
+   DARK MODE — BLACK + BLUE GLOW
+   (Light mode remains exactly as-is)
+========================= */
 
+:root {
+  --blue: #006BB6;  /* Warriors blue */
+  --gold: #FFC72C;  /* Warriors gold */
+}
+
+/* Page background & base text */
+html[data-theme="dark"] body.court-bg {
+  background-color: #0b0c0f; /* deep black */
+  background-image: repeating-linear-gradient(
+    90deg,
+    #121419 0px,
+    #121419 10px,
+    #0b0c0f 10px,
+    #0b0c0f 20px
+  );
+  color: #e9eef6;
+}
+
+/* The translucent overlay and general text */
+html[data-theme="dark"] .overlay {
+  background-color: rgba(0,0,0,0.82);
+  color: #e9eef6;
+}
+
+/* Navbar container with blue glow */
+html[data-theme="dark"] .navbar {
+  background: rgba(0,0,0,0.92);
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  box-shadow:
+    0 0 6px var(--blue),
+    0 0 14px rgba(0,107,182,0.8);
+}
+
+/* Navbar links keep white, glow stronger on hover */
+html[data-theme="dark"] .nav-links a {
+  color: #ffffff;
+  text-shadow: 0 0 4px var(--blue), 0 0 10px var(--blue);
+}
+html[data-theme="dark"] .nav-links a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 6px var(--blue), 0 0 14px var(--blue), 0 0 22px var(--blue);
+}
+
+/* Title glow (hero) in blue */
+html[data-theme="dark"] .hero-title {
+  color: var(--gold);
+  text-shadow:
+    0 0 6px var(--blue),
+    0 0 12px var(--blue),
+    0 0 20px var(--blue);
+}
+
+/* Cards / tiles / sections you already use */
+html[data-theme="dark"] .court-card,
+html[data-theme="dark"] .shoe-card,
+html[data-theme="dark"] .feature-box,
+html[data-theme="dark"] .quick-nav a,
+html[data-theme="dark"] .about-box,
+html[data-theme="dark"] .quote-tab-section {
+  background: rgba(255,255,255,0.06);
+  color: #e9eef6;
+  border: 1px solid rgba(0,107,182,0.25);
+  box-shadow: 0 0 6px rgba(0,107,182,0.25);
+}
+
+html[data-theme="dark"] .court-card:hover,
+html[data-theme="dark"] .shoe-card:hover,
+html[data-theme="dark"] .feature-box:hover,
+html[data-theme="dark"] .quick-nav a:hover,
+html[data-theme="dark"] .about-box:hover {
+  background: rgba(0,107,182,0.28);
+  box-shadow: 0 0 12px rgba(0,107,182,0.55);
+}
+
+/* Buttons */
+html[data-theme="dark"] .start-button {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(0,107,182,0.4);
+  box-shadow: 0 0 8px rgba(0,107,182,0.35);
+}
+html[data-theme="dark"] .start-button:hover {
+  background: rgba(0,107,182,0.55);
+  box-shadow: 0 0 14px rgba(0,107,182,0.7);
+}
+
+/* Lucky 7s & stars – subtle cooler tint */
+html[data-theme="dark"] .lucky-sevens span {
+  color: rgba(255,255,255,0.1);
+  text-shadow:
+    0 0 8px rgba(0,107,182,0.25),
+    0 0 16px rgba(0,107,182,0.25);
+}
+html[data-theme="dark"] .falling-stars span {
+  color: rgba(0,160,255,0.75);
+}
+
+/* Court lines (center circle / arc) – gold lines pop on black */
+html[data-theme="dark"] .center-circle,
+html[data-theme="dark"] .three-point-arc {
+  border-color: rgba(255, 199, 44, 0.8);
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+  background: transparent;
+  color: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 999px;
+  padding: .4rem .8rem;
+  font-weight: 700;
+  box-shadow: 0 0 6px rgba(255,199,44,.35);
+  cursor: pointer;
+}
+.theme-toggle:hover { box-shadow: 0 0 12px rgba(255,199,44,.6); }
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --bg-color: #000;
+  --text-color: #fff;
+  --accent-color: #00bfff; /* glowing blue */
+  --card-bg: rgba(20, 20, 20, 0.9);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(rgba(0, 191, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 191, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: var(--text-color);
+}
+
+/* Nav Bar */
+[data-theme="dark"] nav {
+  background-color: #000;
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Court & Shoe Cards */
+[data-theme="dark"] .court-card,
+[data-theme="dark"] .shoe-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Titles */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
