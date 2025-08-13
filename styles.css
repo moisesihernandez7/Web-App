@@ -901,3 +901,117 @@ html[data-theme="dark"] .three-point-arc {
   color: var(--accent-color);
   text-shadow: 0 0 10px var(--accent-color);
 }
+
+/* ========== CSS-ONLY HOOP (no images) ========== */
+.css-hoop{
+  position: fixed;          /* stays put as a background element */
+  bottom: 60px;
+  right: 5%;
+  width: 280px;             /* overall footprint */
+  height: 360px;
+  pointer-events: none;     /* never blocks clicks */
+  z-index: 0;               /* behind your content */
+  opacity: .9;
+}
+
+/* Pole / stanchion */
+.css-hoop .pole{
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  width: 28px;
+  height: 220px;
+  background: linear-gradient(#3a3a3a, #222);
+  border-radius: 8px;
+  box-shadow: inset 0 0 8px rgba(255,255,255,.12);
+}
+
+/* Backboard */
+.css-hoop .backboard{
+  position: absolute;
+  bottom: 230px;
+  left: 0;
+  width: 260px;
+  height: 170px;
+  background: rgba(255,255,255,.88);
+  border: 4px solid #1d428a;          /* Warriors blue */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(29,66,138,.45);
+}
+
+/* Inner shooting square */
+.css-hoop .square{
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 50px;
+  border: 4px solid #FFC72C;          /* Warriors gold */
+  border-radius: 4px;
+}
+
+/* Rim (front ellipse) */
+.css-hoop .rim{
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 26px;                        /* ellipse height */
+  border: 6px solid #ff6a00;           /* rim orange */
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,106,0,.25) 0%, transparent 60%);
+  box-shadow: 0 0 8px rgba(255,106,0,.35);
+}
+
+/* Net: criss-cross grid clipped into a cone, with gentle sway */
+.css-hoop .net{
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 120px;
+  /* two crossed grids */
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.9) 0 2px, transparent 2px 16px),
+    repeating-linear-gradient(45deg,  rgba(255,255,255,.9) 0 2px, transparent 2px 16px);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
+  /* cone/diamond shape under the rim */
+  clip-path: polygon(0% 0%, 100% 0%, 88% 25%, 70% 55%, 50% 85%, 30% 55%, 12% 25%);
+  transform-origin: 50% 0%;
+  animation: hoopSway 3s ease-in-out infinite;
+  opacity: .95;
+}
+
+/* tiny sway animation */
+@keyframes hoopSway{
+  0%,100% { transform: translateX(-50%) rotate(0deg); }
+  50%     { transform: translateX(-50%) rotate(2deg); }
+}
+
+/* ------- Dark mode tweaks: stronger blue glow on board, cooler pole ------- */
+html[data-theme="dark"] .css-hoop .backboard{
+  background: rgba(255,255,255,.12);
+  border-color: #006BB6;
+  box-shadow: 0 0 12px rgba(0,107,182,.75), 0 0 24px rgba(0,107,182,.35);
+}
+
+html[data-theme="dark"] .css-hoop .square{
+  border-color: #FFC72C;
+  box-shadow: 0 0 8px rgba(255,199,44,.45);
+}
+
+html[data-theme="dark"] .css-hoop .pole{
+  background: linear-gradient(#1c1f26, #0e1218);
+  box-shadow: inset 0 0 10px rgba(255,255,255,.06);
+}
+
+html[data-theme="dark"] .css-hoop .rim{
+  box-shadow: 0 0 10px rgba(255,106,0,.5);
+}
+
+html[data-theme="dark"] .css-hoop .net{
+  filter: drop-shadow(0 3px 6px rgba(0,107,182,.45));
+}
